@@ -58,9 +58,9 @@ for (const buttonstep of document.querySelectorAll("button")){
             console.log("Took step: ", walked, "/", steps);
             await sleep(500);
             //Counts EXP
-            let exp = document.querySelector('[x-text="notif_exp"]');
-            xp = Number(xp) + Number(exp.textContent);
-            exp = 0;
+            //let exp = document.querySelector('[x-text="notif_exp"]');
+            //xp = Number(xp) + Number(exp.textContent);
+            //exp = 0;
             console.log("EXP Gained: ", xp);
             return 0;
         }
