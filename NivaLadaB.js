@@ -1,6 +1,6 @@
 console.log("Lade Recourcen");
 
-const steps = 5; //How many steps the bot takes before exiting.
+const steps = 1000; //How many steps the bot takes before exiting.
 let walked = 0;
 let xp = 0;
 var sneeze = new Audio('https://murtfeld.ddns.net/mp3/sneeze.mp3');
@@ -58,10 +58,11 @@ for (const buttonstep of document.querySelectorAll("button")){
             console.log("Took step: ", walked, "/", steps);
             await sleep(500);
             //Counts EXP
-            //let exp = document.querySelector('[x-text="notif_exp"]');
+            //let exp = Number(document.querySelector('[x-text="notif_exp"]'));
             //xp = Number(xp) + Number(exp.textContent);
             //exp = 0;
-            console.log("EXP Gained: ", xp);
+            //console.log("EXP Gained: ", xp);
+            console.clear()
             return 0;
         }
     }
@@ -71,7 +72,7 @@ for (const buttonstep of document.querySelectorAll("button")){
 console.log("Starting NivaLadaB");
 
 while(steps >= walked){
-    if(await takeastep(5000)){
+    if(await takeastep(500) == 0){
         walked++;
     }
 }
